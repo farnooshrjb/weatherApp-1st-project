@@ -1,0 +1,35 @@
+body {
+  background-image: url(https://i.pinimg.com/736x/70/c6/27/70c627cf77e67624bccabd954efed99c.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container {
+  display: block;
+  max-width: 100%;
+  margin: 40px;
+  padding: 10px;
+  background-color: rgba(246, 234, 247, 0.7);
+  border-style: ridge;
+  border-color: white;
+  border-radius: 20px;
+}
+.emojis {
+  font-size: 60px;
+}
+.description-list {
+  margin:0px 0px 110px 0px;
+  text-align: center;
+  color: blueviolet;
+    font-size: larger;
+
+}
+.date{
+  margin:0px 0px 90px 0px ;
+  text-align: center;
+  color:blueviolet;
+
+}
+.city{
+text-align: center;
+  color:blueviolet;
+}
