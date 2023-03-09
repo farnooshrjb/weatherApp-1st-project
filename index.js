@@ -20,7 +20,7 @@ function formatDate(timestamp) {
     return `${day} ${hours}:${minutes}`;
 }
 
-}
+
 // display temprature , wind , humidity and... by using API IN JavaScript:
 
 function displayTemprature(response) {
@@ -38,9 +38,14 @@ function displayTemprature(response) {
     //Time & Date:
     let dateElement = document.querySelector("#current-date");
     dateElement.innerHTML = formatDate(response.data.dt * 1000)
+    // Change weather icon
+    let iconElement = document.querySelector("#weather-icon");
+    iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-}
+
+
 
 
 
