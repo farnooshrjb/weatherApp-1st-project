@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>weatherApp</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -13,7 +14,7 @@
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap" rel="stylesheet" />
@@ -23,11 +24,11 @@
 <body>
     <div class="container text-center">
         <h1>Weather App</h1>
-        <form class="row">
+        <form id="searchForm" class="row">
 
             <div class="col-auto">
                 <label for="inputPassword2" class="visually"></label>
-                <input type="text" class="form-control" id="inputPassword2" placeholder="City Name...">
+                <input type="text" class="form-control" id="inputcity" placeholder="City Name...">
             </div>
             <div class="col-auto">
                 <br> <button type="submit" class="btn btn-primary mb-3">Search</button>
@@ -42,25 +43,28 @@
                         <div class="card" style="width: 11rem;">
                             <img src="fog.png" alt="fog pic">
                             <div class="card-body">
-                                <p class="card-text"><strong> 4° C|F</strong></p>
+                                <h1 class="card-text"><strong id="temperature"> </strong><span class="units">
+                                        °C</span>
+                                </h1>
+                                <p id="description"> Rain & Fog </p>
                             </div>
                         </div>
                     </th>
                     <th scope="col">
                         <div class="description-list">
                             <ul>
-                                <li>Precipitation:</li>
-                                <li>Humidity:</li>
-                                <li>Wind:</li>
+                                <li>Precipitation: 32 %</li>
+                                <li>Humidity: <span id="humidity"></span> %</li>
+                                <li>Wind: <span id="wind"></span> km/h</li>
                             </ul>
                         </div>
 
                     </th>
                     <th scope="col">
 
-                        <h1 class="city"><strong>Tehran,Iran</strong> </h1>
+                        <h1 id="city"><strong>Tehran,Iran</strong> </h1>
                         <br>
-                        <h2 class="date"> <strong>Monday , 22:00</strong> </h2>
+                        <h2 id="current-date"> <strong>Monday , 22:00</strong> </h2>
 
                     </th>
 
@@ -98,7 +102,8 @@
         <hr />
 
     </div>
-
+    <script src="index.js"></script>
 </body>
+
 
 </html>

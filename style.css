@@ -23,13 +23,21 @@ body {
     font-size: larger;
 
 }
-.date{
+#current-date{
   margin:0px 0px 90px 0px ;
   text-align: center;
   color:blueviolet;
 
 }
-.city{
+#city{
 text-align: center;
   color:blueviolet;
+}
+#description{
+  text-transform: capitalize;
+}
+li{
+  list-style: none;
+  margin-right: 200px ;
+  text-align: center;
 }
