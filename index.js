@@ -49,8 +49,25 @@ function displayTemprature(response) {
 
 
 
+function search(city) {
 
-let city = "paris";
-let apiKey = `ab82911f5489acd5368aba2902d18e38`;
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city} &appid=${apiKey}&units=metric`;
-axios.get(apiUrl).then(displayTemprature);
+    let apiKey = `ab82911f5489acd5368aba2902d18e38`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city} &appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayTemprature);
+
+}
+
+
+
+function handlesubmit(event) {
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#inputcity");
+    //console.log(cityInputElement.value);
+    search(cityInputElement.value);
+}
+
+search("Tehran");
+
+// Control form with JavaScript:
+let form = document.querySelector("#searchForm");
+form.addEventListener("submit", handlesubmit);
