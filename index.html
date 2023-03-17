@@ -41,11 +41,15 @@
                 <tr>
                     <th scope="col">
                         <div class="card" style="width: 11rem;">
-                            <img src="fog.png" alt="fog pic">
+                            <img src="fog.png" alt="fog pic" id="weather-icon">
                             <div class="card-body">
-                                <h1 class="card-text"><strong id="temperature"> </strong><span class="units">
-                                        °C</span>
+
+                                <h1 class="card-text"><strong id="temperature"></strong><span class="units">
+                                        <small><a href="#" id="celsius-link" class="active">°C</a> |<a href="#"
+                                                id="fahrenheit-link" class="active">
+                                                °F</a> </small></span>
                                 </h1>
+
                                 <p id="description"> Rain & Fog </p>
                             </div>
                         </div>
@@ -100,7 +104,7 @@
             </div>
         </div>
         <hr />
-
+        <small><a href="">Open-source code</a> by Farnoosh Rajabi </small>
     </div>
     <script src="index.js"></script>
 </body>

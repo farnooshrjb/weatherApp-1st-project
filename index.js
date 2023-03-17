@@ -1,6 +1,5 @@
 // In your project, display the current date and time using JavaScript
 
-
 function formatDate(timestamp) {
     let date = new Date(timestamp);
 
@@ -21,10 +20,9 @@ function formatDate(timestamp) {
 }
 
 
-// display temprature , wind , humidity and... by using API IN JavaScript:
 
 function displayTemprature(response) {
-    console.log(response.data);
+    //console.log(response.data);
     let tempratureElement = document.querySelector("#temperature");
     tempratureElement.innerHTML = Math.round(response.data.main.temp);
     let cityElement = document.querySelector("#city");
@@ -35,19 +33,13 @@ function displayTemprature(response) {
     humidityElement.innerHTML = response.data.main.humidity;
     let windElement = document.querySelector("#wind");
     windElement.innerHTML = Math.round(response.data.wind.speed);
-    //Time & Date:
     let dateElement = document.querySelector("#current-date");
     dateElement.innerHTML = formatDate(response.data.dt * 1000)
-    // Change weather icon
     let iconElement = document.querySelector("#weather-icon");
     iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     iconElement.setAttribute("alt", response.data.weather[0].description);
+    celsiusTemprature = response.data.main.temp;
 }
-
-
-
-
-
 
 function search(city) {
 
@@ -58,7 +50,6 @@ function search(city) {
 }
 
 
-
 function handlesubmit(event) {
     event.preventDefault();
     let cityInputElement = document.querySelector("#inputcity");
@@ -66,8 +57,34 @@ function handlesubmit(event) {
     search(cityInputElement.value);
 }
 
-search("Tehran");
+// unit conversion:
+// fahrenheit:
+
+function displayFahrenheitTemprature(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature");
+    let fahrenheitTemprature = (celsiusTemprature * 9) / 5 + 32;
+    temperatureElement.innerHTML = Math.round(fahrenheitTemprature);
+}
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemprature);
+//celsius:
+
+function displaycelsiusTemprature(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature");
+    temperatureElement.innerHTML = Math.round(celsiusTemprature);
+}
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displaycelsiusTemprature);
+
+
+let celsiusTemprature = null;
 
 // Control form with JavaScript:
 let form = document.querySelector("#searchForm");
 form.addEventListener("submit", handlesubmit);
+
+
+search("Tehran");
