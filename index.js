@@ -116,3 +116,4 @@ form.addEventListener("submit", handlesubmit);
 
 
 search("Tehran");
+displayForecast();
