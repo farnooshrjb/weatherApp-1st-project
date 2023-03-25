@@ -19,6 +19,34 @@ function formatDate(timestamp) {
     return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+    let forecastElement = document.querySelector("#forecast");
+    let forecastHTML = `<div class="row">`;
+    let days = ["Sat", "Sun", "Mon", "Tues", "Wed", "Thurs", "Fri",];
+    days.forEach(function (day) {
+        forecastHTML =
+            forecastHTML +
+            ` 
+    
+        <div class="col">
+            <div class="weather-forecast-date">${day}</div>
+            <img
+                src="overcast.png"
+                alt=""
+                width="36"
+            />
+            <div class="weather-forecast-temperatures">
+                <span class="weather-forecast-temperature-max"> 18° </span>
+                <span class="weather-forecast-temperature-min"> 12° </span>
+            </div>
+        </div>
+    
+
+`;
+    });
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+}
 
 
 function displayTemprature(response) {
